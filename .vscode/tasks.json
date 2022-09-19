@@ -1,0 +1,517 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Set umm to be executable",
+      "type": "shell",
+      "command": "chmod",
+      "args": [
+        {
+          "value": "+x",
+          "quoting": "escape"
+        },
+        {
+          "value": "${config:ummBinaryPath}",
+          "quoting": "weak"
+        }
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean library and target folders",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "clean",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests for ArrayListTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "group": "test",
+      "args": [
+        {
+          "value": "test",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListTest",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run specific test from ArrayListTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "group": "test",
+      "args": [
+        {
+          "value": "test",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListTest",
+          "quoting": "escape"
+        },
+        {
+          "value": "${input:DataStructures.ArrayListTest}",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ArrayListTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListTest",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for ArrayListTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListTest",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check NonComparableElementException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.NonComparableElementException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for NonComparableElementException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.NonComparableElementException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check InvalidArgumentException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.InvalidArgumentException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for InvalidArgumentException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.InvalidArgumentException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check EmptyCollectionException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.EmptyCollectionException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for EmptyCollectionException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.EmptyCollectionException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ElementNotFoundException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.ElementNotFoundException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for ElementNotFoundException",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "Exceptions.ElementNotFoundException",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ArrayList",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayList",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for ArrayList",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayList",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ListADT",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "ADTs.ListADT",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for ListADT",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "ADTs.ListADT",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check CollectionADT",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "ADTs.CollectionADT",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for CollectionADT",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "ADTs.CollectionADT",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "check",
+          "quoting": "escape"
+        },
+        {
+          "value": "",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaDoc for ",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "doc-check",
+          "quoting": "escape"
+        },
+        {
+          "value": "",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Grade Assignment",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "grade",
+          "quoting": "escape"
+        },
+        {
+          "value": "${input:gradable_assignments}",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [
+        {
+          "applyTo": "allDocuments",
+          "fileLocation": [
+            "relative",
+            "${workspaceFolder}"
+          ],
+          "owner": "umm",
+          "pattern": {
+            "endLine": 2,
+            "file": 1,
+            "line": 2,
+            "message": 3,
+            "regexp": "\\s*[│]\\s*([\\w./]+)\\s*[│]\\s*([0-9]+)\\s*[│]\\s*([\\w ]+)"
+          }
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "DataStructures.ArrayListTest",
+      "description": "Which test to run?",
+      "options": [
+        "testArrayList",
+        "testIsEmpty",
+        "testSize",
+        "testAddFirst",
+        "testAddLast",
+        "testAddAfter",
+        "testRemove",
+        "testRemoveFirst",
+        "testRemoveLast",
+        "testFirst",
+        "testLast",
+        "testContains",
+        "testIndexOf",
+        "testGet",
+        "testSet"
+      ],
+      "default": "testArrayList"
+    },
+    {
+      "type": "pickString",
+      "id": "gradable_assignments",
+      "description": "Which assignment are you working on?",
+      "options": [
+        "\"6L. Test Driven Development\"",
+        "\"7L. Writing JUnit tests - Part 1\"",
+        "\"8L. Writing Junit tests - Part 2 - CoOrds Class\"",
+        "\"8L. Writing Junit tests - Part 2 - Student Class\"",
+        "\"1A. Implementing Array-backed Lists\""
+      ],
+      "default": "\"6L. Test Driven Development\""
+    }
+  ]
+}
