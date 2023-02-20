@@ -6,7 +6,7 @@ import ADTs.ListADT;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ArrayListHiddenTest {
+public class ArrayListTest {
 
   @Test
   public void testArrayList() {

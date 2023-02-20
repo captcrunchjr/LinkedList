@@ -34,17 +34,12 @@
       "problemMatcher": []
     },
     {
-      "label": "Run tests for ArrayListTest",
+      "label": "Reset project metadata",
       "type": "shell",
       "command": "${config:ummBinaryPath}",
-      "group": "test",
       "args": [
         {
-          "value": "test",
-          "quoting": "escape"
-        },
-        {
-          "value": "DataStructures.ArrayListTest",
+          "value": "reset",
           "quoting": "escape"
         }
       ],
@@ -55,21 +50,12 @@
       "problemMatcher": []
     },
     {
-      "label": "Run specific test from ArrayListTest",
+      "label": "Check health of the project",
       "type": "shell",
       "command": "${config:ummBinaryPath}",
-      "group": "test",
       "args": [
         {
-          "value": "test",
-          "quoting": "escape"
-        },
-        {
-          "value": "DataStructures.ArrayListTest",
-          "quoting": "escape"
-        },
-        {
-          "value": "${input:DataStructures.ArrayListTest}",
+          "value": "check-health",
           "quoting": "escape"
         }
       ],
@@ -80,7 +66,69 @@
       "problemMatcher": []
     },
     {
-      "label": "Check ArrayListTest",
+      "label": "Update umm executable",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "args": [
+        {
+          "value": "update",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests for ArrayListHiddenTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "group": "test",
+      "args": [
+        {
+          "value": "test",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListHiddenTest",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run specific test from ArrayListHiddenTest",
+      "type": "shell",
+      "command": "${config:ummBinaryPath}",
+      "group": "test",
+      "args": [
+        {
+          "value": "test",
+          "quoting": "escape"
+        },
+        {
+          "value": "DataStructures.ArrayListHiddenTest",
+          "quoting": "escape"
+        },
+        {
+          "value": "${input:DataStructures.ArrayListHiddenTest}",
+          "quoting": "escape"
+        }
+      ],
+      "dependsOn": [
+        "Set umm to be executable"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check ArrayListHiddenTest",
       "type": "shell",
       "command": "${config:ummBinaryPath}",
       "args": [
@@ -89,7 +137,7 @@
           "quoting": "escape"
         },
         {
-          "value": "DataStructures.ArrayListTest",
+          "value": "DataStructures.ArrayListHiddenTest",
           "quoting": "escape"
         }
       ],
@@ -100,7 +148,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Check JavaDoc for ArrayListTest",
+      "label": "Check JavaDoc for ArrayListHiddenTest",
       "type": "shell",
       "command": "${config:ummBinaryPath}",
       "args": [
@@ -109,7 +157,7 @@
           "quoting": "escape"
         },
         {
-          "value": "DataStructures.ArrayListTest",
+          "value": "DataStructures.ArrayListHiddenTest",
           "quoting": "escape"
         }
       ],
@@ -439,7 +487,7 @@
   "inputs": [
     {
       "type": "pickString",
-      "id": "DataStructures.ArrayListTest",
+      "id": "DataStructures.ArrayListHiddenTest",
       "description": "Which test to run?",
       "options": [
         "testArrayList",
