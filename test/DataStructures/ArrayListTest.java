@@ -6,27 +6,26 @@ import ADTs.ListADT;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ArrayListTest {
+public class ArrayListHiddenTest {
 
   @Test
   public void testArrayList() {
     ListADT<Integer> list = new ArrayList<Integer>(10);
-    assertEquals(0, list.size());
+    assertEquals("Newly created list should be empty", 0, list.size());
 
     list = new ArrayList<Integer>();
-    assertEquals(0, list.size());
+    assertEquals("Newly created list should be emtpy", 0, list.size());
   }
 
   @Test
   public void testIsEmpty() {
     ListADT<Integer> list = new ArrayList<Integer>(10);
-    assertTrue(list.isEmpty());
+    assertTrue("Newly created list should be empty", list.isEmpty());
   }
 
   @Test
   public void testSize() {
     ListADT<Integer> list = new ArrayList<Integer>(10);
-    assertEquals(0, list.size());
 
     list.addLast(1);
     assertEquals(1, list.size());
@@ -51,7 +50,7 @@ public class ArrayListTest {
     try {
       assertEquals(1, list.first().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     list.addFirst(2);
@@ -59,7 +58,7 @@ public class ArrayListTest {
     try {
       assertEquals(2, list.first().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
   }
 
@@ -72,7 +71,7 @@ public class ArrayListTest {
     try {
       assertEquals(1, list.last().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     list.addLast(2);
@@ -80,7 +79,7 @@ public class ArrayListTest {
     try {
       assertEquals(2, list.last().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
   }
 
@@ -97,7 +96,7 @@ public class ArrayListTest {
       assertEquals(list.size(), 4);
       assertEquals(4, list.get(1).intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -106,7 +105,7 @@ public class ArrayListTest {
 
       assertEquals(5, list.get(3).intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -134,20 +133,22 @@ public class ArrayListTest {
 
     try {
       assertEquals(3, list.size());
-      list.remove(1);
+      Integer out = list.remove(1);
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(1), out);
       assertEquals(2, list.size());
       assertFalse(list.contains(1));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       assertEquals(2, list.size());
-      list.remove(3);
+      Integer out = list.remove(3);
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(3), out);
       assertEquals(1, list.size());
       assertFalse(list.contains(3));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -157,10 +158,11 @@ public class ArrayListTest {
     }
 
     try {
-      list.remove(2);
+      Integer out = list.remove(2);
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(2), out);
       assertTrue(list.isEmpty());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -180,26 +182,29 @@ public class ArrayListTest {
 
     try {
       assertEquals(3, list.size());
-      list.removeFirst();
+      Integer out = list.removeFirst();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(1), out);
       assertEquals(2, list.size());
       assertFalse(list.contains(1));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       assertEquals(2, list.size());
-      list.removeFirst();
+      Integer out = list.removeFirst();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(2), out);
       assertEquals(1, list.size());
       assertFalse(list.contains(2));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
-      list.removeFirst();
+      Integer out = list.removeFirst();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(3), out);
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -219,26 +224,29 @@ public class ArrayListTest {
 
     try {
       assertEquals(3, list.size());
-      list.removeLast();
+      Integer out = list.removeLast();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(3), out);
       assertEquals(2, list.size());
       assertFalse(list.contains(3));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       assertEquals(2, list.size());
-      list.removeLast();
+      Integer out = list.removeLast();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(2), out);
       assertEquals(1, list.size());
       assertFalse(list.contains(2));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
-      list.removeLast();
+      Integer out = list.removeLast();
+      assertEquals("Remove return value is not equal to the value we asked to remove", Integer.valueOf(1), out);
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -258,7 +266,7 @@ public class ArrayListTest {
       assertEquals(1, list.size());
       assertEquals(1, list.first().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     list.addFirst(2);
@@ -267,14 +275,14 @@ public class ArrayListTest {
       assertEquals(2, list.size());
       assertEquals(2, list.first().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       list.removeFirst();
       list.removeFirst();
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -294,7 +302,7 @@ public class ArrayListTest {
       assertEquals(1, list.size());
       assertEquals(1, list.last().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     list.addLast(2);
@@ -303,14 +311,14 @@ public class ArrayListTest {
       assertEquals(2, list.size());
       assertEquals(2, list.last().intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       list.removeLast();
       list.removeLast();
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -333,14 +341,14 @@ public class ArrayListTest {
       assertFalse(list.contains(3));
       assertFalse(list.contains(4));
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       list.removeFirst();
       list.removeFirst();
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -374,11 +382,26 @@ public class ArrayListTest {
       assertEquals(1, list.get(0).intValue());
       assertEquals(2, list.get(1).intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       list.get(2);
+      fail("There should be an thrown InvalidArgumentException here.");
+    } catch (Exception e) {
+      assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
+    }
+
+    try {
+      list.get(-1);
+      fail("There should be an thrown InvalidArgumentException here.");
+    } catch (Exception e) {
+      assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
+    }
+
+    try {
+      list.get(3);
+      fail("There should be an thrown InvalidArgumentException here.");
     } catch (Exception e) {
       assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
     }
@@ -387,7 +410,7 @@ public class ArrayListTest {
       list.removeFirst();
       list.removeFirst();
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
@@ -411,20 +434,35 @@ public class ArrayListTest {
       assertEquals(3, list.get(0).intValue());
       assertEquals(4, list.get(1).intValue());
     } catch (Exception e) {
-      fail("Exception should not be thrown here.");
+      fail("Exception should not be thrown here: " + e.toString());
     }
 
     try {
       list.set(3, 5);
+      fail("There should be an thrown InvalidArgumentException here.");
+    } catch (Exception e) {
+      assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
+    }
+
+    try {
+      list.set(-1, 5);
+      fail("There should be an thrown InvalidArgumentException here.");
+    } catch (Exception e) {
+      assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
+    }
+
+    try {
+      list.set(2, 5);
+      fail("There should be an thrown InvalidArgumentException here.");
     } catch (Exception e) {
       assertTrue("InvalidArgumentException should be thrown here.", e instanceof InvalidArgumentException);
     }
 
     try {
       (new ArrayList<Integer>(10)).set(0, 5);
+      fail("There should be an thrown EmptyCollectionException here.");
     } catch (Exception e) {
       assertTrue("EmptyCollectionException should be thrown here.", e instanceof EmptyCollectionException);
     }
   }
-
 }

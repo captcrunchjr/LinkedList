@@ -400,46 +400,6 @@
       "problemMatcher": []
     },
     {
-      "label": "Check ",
-      "type": "shell",
-      "command": "${config:ummBinaryPath}",
-      "args": [
-        {
-          "value": "check",
-          "quoting": "escape"
-        },
-        {
-          "value": "",
-          "quoting": "escape"
-        }
-      ],
-      "dependsOn": [
-        "Set umm to be executable"
-      ],
-      "dependsOrder": "sequence",
-      "problemMatcher": []
-    },
-    {
-      "label": "Check JavaDoc for ",
-      "type": "shell",
-      "command": "${config:ummBinaryPath}",
-      "args": [
-        {
-          "value": "doc-check",
-          "quoting": "escape"
-        },
-        {
-          "value": "",
-          "quoting": "escape"
-        }
-      ],
-      "dependsOn": [
-        "Set umm to be executable"
-      ],
-      "dependsOrder": "sequence",
-      "problemMatcher": []
-    },
-    {
       "label": "Grade Assignment",
       "type": "shell",
       "command": "${config:ummBinaryPath}",
@@ -505,13 +465,25 @@
       "id": "gradable_assignments",
       "description": "Which assignment are you working on?",
       "options": [
-        "\"6L. Test Driven Development\"",
-        "\"7L. Writing JUnit tests - Part 1\"",
-        "\"8L. Writing Junit tests - Part 2 - CoOrds Class\"",
+        "\"Project: Pyramid Scheme\"",
+        "\"Project: WorkAheadQueue\"",
+        "\"Lab 8A - Recursion in Trees\"",
+        "\"Sample Assignment\"",
+        "\"Project: ShoppingList - JavaDoc\"",
+        "\"4L. Test Driven Development\"",
+        "\"Implementing LinkedLists\"",
+        "\"Implementing LinkedStack\"",
+        "\"Implementing LinkedQueue\"",
+        "\"Implementing ArrayQueue\"",
+        "\"Implementing ArrayStack\"",
+        "\"13L. Implementing Array-backed Lists\"",
         "\"8L. Writing Junit tests - Part 2 - Student Class\"",
-        "\"1A. Implementing Array-backed Lists\""
+        "\"8L. Writing Junit tests - Part 2 - CoOrds Class\"",
+        "\"5L. Writing JUnit tests - Part 1\"",
+        "\"Project: Round Robin Scheduler\"",
+        "\"Project: ShoppingList - Unit Tests\""
       ],
-      "default": "\"6L. Test Driven Development\""
+      "default": "\"Project: Pyramid Scheme\""
     }
   ]
 }
